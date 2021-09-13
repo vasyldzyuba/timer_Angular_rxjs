@@ -14,6 +14,7 @@ export class AppComponent {
   seconds: any = '00';
   minutes: any = '00';
   hours: any = '';
+  lastPress: number = 0;
   progress: string;
   timer$: Observable<number>;
   timerObserver: PartialObserver<number>;
@@ -55,7 +56,13 @@ export class AppComponent {
   }
 
   pauseClick() {
+    const time = new Date().getTime();
+    const delta = time - this.lastPress;
+    const pressDelay = 500;
+    if (delta < pressDelay) {
     this.pauseClick$.next();
+    }
+    this.lastPress = time;
   }
 
 
