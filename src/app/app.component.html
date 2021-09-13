@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="time">
+    <span class="minute">{{progress}}</span>
+  </div>
+  <div class="buttons">
+    <button class="start" (click)="startTimer()">
+      Start
+    </button>
+    <button class="stop" (click)="stopClick()">
+      Stop
+    </button>
+    <button class="wait" (click)="pauseClick()">
+      Wait
+    </button>
+    <button class="reset" (click)="restartClick()">
+      Reset
+    </button>
+  </div>
+</div>
